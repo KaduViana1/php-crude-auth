@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  background-color: hsl(0, 0%, 20%);
+}
+
+main {
+  height: 100lvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 500px;
+}
+
+label {
+  font-size: 1.5rem;
+  align-self: center;
+}
+
+input {
+  color: black;
+  height: 2rem;
+  border-radius: 8px;
+  padding-left: 0.4rem;
+}
+
+.botao {
+  width: 50px;
+}
+
+.error {
+  color: red;
+  margin-inline: auto;
+}
