@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   color: white;
+  text-decoration: none;
 }
 
 body {
@@ -18,11 +19,20 @@ main {
   row-gap: 3rem;
 }
 
+.container {
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
 .form {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
   width: 500px;
+  row-gap: 1rem;
+  padding: 1rem 2rem;
+  border: 1px solid white;
 }
 
 label {
@@ -30,18 +40,53 @@ label {
   align-self: center;
 }
 
-input {
+.text-input {
   color: black;
   height: 2rem;
   border-radius: 8px;
   padding-left: 0.4rem;
+  width: 100%;
 }
 
 .botao {
-  width: 50px;
+  background-color: hsl(0, 0%, 20%);
+  border: 1px solid white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+table,
+tr,
+th,
+td {
+  border-collapse: collapse;
+  border: 1px solid white;
+}
+
+th,
+td {
+  padding: 0.8rem;
+  text-align: center;
+}
+
+th {
+  font-weight: 800;
 }
 
 .error {
   color: red;
   margin-inline: auto;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.header a {
+  position: absolute;
+  right: 0;
+  top: 10px;
 }
