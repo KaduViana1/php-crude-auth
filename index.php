@@ -3,7 +3,6 @@ include "db.php";
 session_start();
 
 if(!isset($_SESSION['user'])) {
-    // $user = array("nome" => "Visitor");
     header('location: /test/login.php');
     exit;
 } else {

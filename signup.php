@@ -86,7 +86,10 @@ mysqli_close($connection);
              <?php
              if(!empty($errorMessages["password"])) echo "<div class='error'> {$errorMessages['password']} </div>"    
              ?> 
-            <input class="botao" type='submit' value="Enviar"  style="width: 150px; margin-inline: auto; font-size: 1.2rem"/>
+            <div class="buttons">
+                <a class='botao' href="/test/login.php" style="width: 150px; margin-inline: auto; font-size: 1.2rem; text-align: center;" role="button">Log in</a>
+                <input class="botao" type='submit' value="Enviar"  style="width: 150px; margin-inline: auto; font-size: 1.2rem"/>
+            </div>
         </form>
         
     </main>

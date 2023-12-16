@@ -2,6 +2,7 @@
 session_start();
 include "db.php";
 
+
 $email = "";
 $password = "";
 
@@ -30,41 +31,28 @@ if(!$result) {
 } else {
 $user = $result->fetch_assoc();
 
-$hashed = password_hash('123456', PASSWORD_DEFAULT);
 
-var_dump($hashed, $user['senha']);
+if(isset($user)) {
 
-if(isset($user) && password_verify($password, $user['senha'])) {
+if(!password_verify($password, $user['senha'])) {
+  $errorMessages["query"] = "Email ou senha incorretos";
+} else {
 $_SESSION['user'] = $user;
 
 header('Location: /test');
 exit;
-}
-
-
-
-
-
-
-    
-}
-
-};
-}
+}}}}}
 
 mysqli_close($connection);
 ?>
 
 
 <?php include 'header.php' ?>
-
-
     <main>
         <h1>Login</h1>
         <?php
              if(!empty($errorMessages["nquery"])) echo "<div class='error'> {$errorMessages['query']} </div>"    
-             ?> 
-        
+             ?>       
         <form action="" method="post" class="form">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" class="text-input" value="<?php echo $email ?>"  >
@@ -76,10 +64,10 @@ mysqli_close($connection);
              <?php
              if(!empty($errorMessages["password"])) echo "<div class='error'> {$errorMessages['password']} </div>"    
              ?> 
-            <input class="botao" type='submit' value="Enviar"  style="width: 150px; margin-inline: auto; font-size: 1.2rem"/>
+            <div class="buttons">
+                <a class='botao' href="/test/signup.php" style="width: 150px; margin-inline: auto; font-size: 1.2rem; text-align: center;" role="button">Cadastre-se</a>
+                <input class="botao" type='submit' value="Enviar"  style="width: 150px; margin-inline: auto; font-size: 1.2rem"/>
+            </div>
         </form>
-        
     </main>
-
-
 <?php include 'footer.php' ?>
